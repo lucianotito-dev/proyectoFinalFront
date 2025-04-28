@@ -106,7 +106,6 @@ window.addEventListener('scroll', function() {
 
 
 //transicion img pag 3
-// Activación de las transiciones
 window.onload = function() {
   const textos = document.querySelectorAll('.texto');
   const imagenes = document.querySelectorAll('.imagen');
@@ -118,7 +117,7 @@ window.onload = function() {
     imagenes.forEach((imagen, index) => {
       imagen.classList.add('show');
     });
-  }, 100); // Aseguramos que se inicie después de la carga
+  }, 100);
 };
 
 
