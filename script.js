@@ -77,23 +77,20 @@ window.addEventListener('scroll', function() {
 
 //pagina 3 scroll
 
-// PAG3.JS
 
 window.addEventListener('scroll', function() {
   const encabezado = document.querySelector('.encabezado');
   const enlaces = document.querySelectorAll('.titulares a');
 
   if (window.scrollY > 50) {
-      encabezado.classList.add('pegado'); // usa la clase "pegado" de la página 3
+      encabezado.classList.add('pegado'); 
 
-      // Cambiar color de los enlaces
       enlaces.forEach(link => {
-          link.style.color = '#808080'; // gris como me pediste
+          link.style.color = '#808080'; 
       });
   } else {
       encabezado.classList.remove('pegado');
 
-      // Restaurar color original de los enlaces
       enlaces.forEach(link => {
           link.style.color = 'white';
       });
