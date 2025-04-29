@@ -45,7 +45,9 @@
     cursor: pointer;
     font-size: 16px;
     position:relative;
-    left:-40px
+    left:-40px;
+    font-family: Raleway, sans-serif;
+
   }
   .titulares a{
     color: white;
@@ -107,7 +109,6 @@
   
 
   
-  /* CONTENIDO */
   .contenido {
     font-family: Raleway, sans-serif;
     color: #2F3645;
@@ -193,7 +194,6 @@
 
 
 
-  /* FOOTER */
   .footer {
     background-color: #1e293b;
     color: white;

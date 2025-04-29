@@ -1,4 +1,3 @@
-// encabezado scroll
 //INICIO.JS
 
 window.addEventListener('scroll', function() {
@@ -103,20 +102,24 @@ window.addEventListener('scroll', function() {
 
 
 //transicion img pag 3
-window.onload = function() {
-  const textos = document.querySelectorAll('.texto');
-  const imagenes = document.querySelectorAll('.imagen');
-  
-  setTimeout(() => {
-    textos.forEach((texto, index) => {
-      texto.classList.add('show');
-    });
-    imagenes.forEach((imagen, index) => {
-      imagen.classList.add('show');
-    });
-  }, 100);
-};
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elementos = document.querySelectorAll(".animate");
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("visible");
+      
+      }
+    });
+  }, {
+    threshold: 0.2, 
+  });
+
+  elementos.forEach((el) => observador.observe(el));
+});
 
 
 //video
@@ -149,3 +152,58 @@ video.addEventListener("timeupdate", function() {
 video.addEventListener("ended", function() {
   tiempoActual.textContent = "00:00";
 });
+
+
+
+
+
+
+
+
+//ROMPE
+
+
+function permitirSoltar(evento) {
+  evento.preventDefault();
+}
+
+function iniciarArrastre(evento) {
+  evento.dataTransfer.setData('text/plain', evento.target.id);
+}
+
+function soltarElemento(evento, casilla) {
+  evento.preventDefault();
+  if (casilla.children.length > 0) return;
+
+  const id = evento.dataTransfer.getData('text/plain');
+  const imagen = document.getElementById(id);
+
+  casilla.innerHTML = '';       
+  casilla.appendChild(imagen);  
+
+  imagen.style.transform = 'none';
+  imagen.style.width     = '100%';
+  imagen.style.height    = '100%';
+}
+
+function reiniciarPuzzle() {
+  const contenedorVacio = document.querySelector('.piezas-rompe');
+
+  const imagenes = [
+    ...document.querySelectorAll('.rompe img'),
+    ...document.querySelectorAll('.piezas-rompe img')
+  ];
+
+  document.querySelectorAll('.rompe').forEach(zona => {
+    zona.innerHTML = 'Arrastre y suelte la imagen aquí';
+  });
+
+  contenedorVacio.innerHTML = '';
+
+  imagenes.forEach(imagen => {
+    imagen.style.transform = '';
+    imagen.style.width     = '';
+    imagen.style.height    = '';
+    contenedorVacio.appendChild(imagen);
+  });
+}

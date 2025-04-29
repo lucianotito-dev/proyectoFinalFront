@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="encabezado">
   <div class="logo-svg">
 <a href="./pag1.HTML">
@@ -24,42 +23,48 @@
 </a>
 </div>
 
-    <div class="titulares">
-      <h3><a href="./PAG3.HTML">HISTORIA</a></h3>
-      <h3><a href="#">JUGUEMOS</a></h3> 
+<div class="titulares">
+<h3><a href="./PAG3.HTML">HISTORIA</a></h3>
+<h3><a href="#">JUGUEMOS</a></h3> 
     
   </header>
 
-  <!-- BANNER CON TÍTULO -->
-  <section class="banner-juego">
-  <div class="titulo-banner">
+<section class="banner-juego">
+<div class="titulo-banner">
 <h1>JUGUEMOS UN POCO</h1>
 </div>
-  </section>
+</section>
 
-  <!-- SECCIÓN ROMPECABEZAS -->
-  <section class="rompecabezas">
-    <h2 class="subtitulo-rompecabezas">Armemos el rompecabezas y veamos qué imagen es...</h2>
+    <!--SECCIÓN-ROMPE-->
+<section class="rompecabezas">
+  <h2 class="subtitulo-rompecabezas">Armemos el rompecabezas y veamos qué imagen es...</h2>
+  
 <div class="contenedor-rompe">
-<div class="rompe">Arrastre y suelte la imagen aquí</div>
-<div class="rompe">Arrastre y suelte la imagen aquí</div>
-<div class="rompe">Arrastre y suelte la imagen aquí</div>
+<div class="rompe"ondragover="permitirSoltar(event)" ondrop="soltarElemento(event, this)"> Arrastre y suelte la imagen aquí</div>
+<div class="rompe" ondragover="permitirSoltar(event)" ondrop="soltarElemento(event, this)">Arrastre y suelte la imagen aquí</div>
+<div class="rompe"ondragover="permitirSoltar(event)"ondrop="soltarElemento(event, this)">Arrastre y suelte la imagen aquí</div>
 </div>
+    
 <div class="piezas-rompe">
-<img src="./img/Rompe1 (1).png" alt="pieza" class="pieza pieza-1">
-<img src="./img/rompe2 (1).png" alt="pieza" class="pieza pieza-2">
-<img src="./img/Rompe3 (1).png" alt="pieza" class="pieza pieza-3">
-    </div>
-  </section>
+<img id="imagen1"src="./img/Rompe1 (1).png"alt="pieza 1"class="pieza pieza-1"draggable="true"ondragstart="iniciarArrastre(event)">
+<img id="imagen2"src="./img/rompe2 (1).png"alt="pieza dos"class="pieza pieza-2"draggable="true"ondragstart="iniciarArrastre(event)">
 
-  <!-- FOOTER -->
-  <section class="footer">
-    <div class="footer-cont">
-      <img id="imgfooter" src="./img/logo.footer.png" alt="etiquetas" />
-      <h3 class="proghist">PROGRAMACIÓN <br />E<br />HISTORIA</h3>
-      <p class="footer-edu">Sitio con fines educativos</p>
-    </div>
-  </section>
+<img id="imagen3"src="./img/Rompe3 (1).png"alt="pieza tres"class="pieza pieza-3"draggable="true" ondragstart="iniciarArrastre(event)">
+</div>
+
+
+<!--boton-->
+      <button id="reintentar" onclick="reiniciarPuzzle()">Reintentar</button>  
+    </section>
+
+  <!--FOOTER-->
+<section class="footer">
+<div class="footer-cont">
+<img id="imgfooter" src="./img/logo.footer.png" alt="etiquetas" />
+<h3 class="proghist">PROGRAMACIÓN <br />E<br />HISTORIA</h3>
+<p class="footer-edu">Sitio con fines educativos</p>
+</div>
+</section>
 
 </body>
 </html>
